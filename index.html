@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GPA Calculator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class = "container">
+  <div class = "intro">
+    <h2>GPA CALCULATOR</h2>
+  </div>
+
+  <main>
+    <div class = "content">
+      
+      <div class = "container column">
+        <div class = "calculator">
+          <h3>Calculate Your GPA</h3>
+          
+          <input type="radio" name = "rb" value = "unweighted" id = "r1"><label for = "r1">Unweighted Class</label><br>
+          <input type="radio" name = "rb" value = "weighted" id = "r2"><label for = "r2">Weighted Class</label><br>
+          <p>
+            Grade: <input type = "text" id = "gradeInput" placeholder = "Ex. 48, 67%, A">
+          </p>
+        
+          <button id = "createClassBtn">Add New Class</button>
+      
+        </div>
+        <div class = "classlist">
+          <p>
+            Number of Classes Entered: <span id = "classCount"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class = "gpa container">
+        <h4>
+          Unweighted GPA: <span id = "unweightedGrade"></span>
+          <br>
+          Weighted GPA: <span id = "weightedGrade"></span>
+        </h4>
+       </div> 
+  <script src="script.js"></script>
+</body>
+
+</html>
