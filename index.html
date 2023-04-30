@@ -9,41 +9,93 @@
 </head>
 
 <body>
-<div class = "container">
+<div>
   <div class = "intro">
     <h2>GPA CALCULATOR</h2>
   </div>
 
   <main>
     <div class = "content">
-      
-      <div class = "container column">
-        <div class = "calculator">
-          <h3>Calculate Your GPA</h3>
+      <div class="column container">
+        <div class = "column">
+          <div class = "calculator">
+            <h3>Calculate Your GPA</h3>
+            
+            <input type="radio" name = "rb" value = "unweighted" id = "r1"><label for = "r1">Unweighted Class</label><br>
+            <input type="radio" name = "rb" value = "weighted" id = "r2"><label for = "r2">Weighted Class</label><br>
+            <p>
+              Grade: <input type = "text" id = "gradeInput" placeholder = "Ex. 48, 67%, A">
+            </p>
           
-          <input type="radio" name = "rb" value = "unweighted" id = "r1"><label for = "r1">Unweighted Class</label><br>
-          <input type="radio" name = "rb" value = "weighted" id = "r2"><label for = "r2">Weighted Class</label><br>
-          <p>
-            Grade: <input type = "text" id = "gradeInput" placeholder = "Ex. 48, 67%, A">
-          </p>
+            <button id = "createClassBtn">Add New Class</button>
         
-          <button id = "createClassBtn">Add New Class</button>
-      
+          </div>
+          <div class = "classlist">
+            <p>
+              Number of Classes Entered: <span id = "classCount"></span>
+            </p>
+          </div>
         </div>
-        <div class = "classlist">
-          <p>
-            Number of Classes Entered: <span id = "classCount"></span>
-          </p>
-        </div>
-      </div>
 
-      <div class = "gpa container">
-        <h4>
-          Unweighted GPA: <span id = "unweightedGrade"></span>
-          <br>
-          Weighted GPA: <span id = "weightedGrade"></span>
-        </h4>
-       </div> 
+        
+        <div class = "classlist">
+          <h3>Class List</h3>
+          <div id = "classList"></div>
+        </div> 
+      </div>
+    
+
+      <div class="column container">
+        <div class = "gpa">
+          <div class = "row">
+            <div class="column">
+              <h4>Unweighted GPA</h4>
+            <div class = "column wheels">
+              <div class = "wheel unweighted">
+                <div class="outer">
+                  <div class = "inner">
+                    <div class = "name"><span id = "unweightedGrade">4.00</span>/4</div>
+                  </div>
+                </div>
+              </div>
+              
+              <svg xmlns = "http://www.w3.org/2000/svg" version="1.1" width="250px" height="250px">
+                <defs>
+                  <linearGradient id = "GradientColorUnweighted">
+                    <stop offset = "0%" stop-color = "#FF0068"/>
+                    <stop offset = "100%" stop-color = "#9733EE"/>
+                  </linearGradient>
+                </defs>
+                <circle cx = "125" cy = "125" r="85" stroke-linecap="round" id = "circle" class = "circle-animation unweightedWheel"/>
+              </svg>
+            </div>
+            </div>
+
+            <div class="column">
+              <h4>Weighted GPA</h4>
+            <div class = "column wheels">
+              <div class = "wheel weighted">
+                <div class="outer">
+                  <div class = "inner">
+                    <div class = "name"><span id = "weightedGrade">4.00</span>/5</div>
+                  </div>
+                </div>
+              </div>
+              
+              <svg xmlns = "http://www.w3.org/2000/svg" version="1.1" width="250px" height="250px">
+                <defs>
+                  <linearGradient id = "GradientColorWeighted">
+                    <stop offset = "0%" stop-color = "#F88F00"/>
+                    <stop offset = "100%" stop-color = "#F80000"/>
+                  </linearGradient>
+                </defs>
+                <circle cx = "125" cy = "125" r="85" stroke-linecap="round" id = "circle" class = "circle-animation weightedWheel"/>
+              </svg>
+            </div>
+            </div>
+          </div>
+        </div>
+
   <script src="script.js"></script>
 </body>
 

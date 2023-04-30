@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poiret+One&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  color: white;
+  opacity: 0;
+  font-size: 5rem;
+  animation: fadeIn 2s ease forwards;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.content {
+  opacity: 0;
+  animation: fadeInText 2s ease forwards 3s;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: mistyrose;
+  transform: scale(0, 0);
+  animation: animate 1s ease-in forwards 2s;
+  overflow: hidden;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0, 0.005);
+  }
+  50% {
+    transform: scaleY(0.005);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.container {
+  flex-basis: 50%;
+}
+
+h3 {
+  font-family: 'Poiret One', cursive;
+  text-decoration: underline;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.wheel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+}
+
+.outer {
+  height: 200px;
+  width: 200px;
+  box-shadow: 
+    6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    6px 6px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.inner {
+  background-color: mistyrose;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  box-shadow: 
+    inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+    inset 4px 4px 6px -1px rgba(255, 255, 255, 0.7),
+    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(0,0,0,0.05);
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', san-serif;
+  color: #555;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* :root {
+  --my-stroke--dashoffset: 600;
+} */
+
+circle {
+  fill: none;
+  stroke-width: 30px;
+  stroke-dasharray: 534;
+  stroke-dashoffset: 534;
+}
+
+.unweightedWheel {
+  stroke: url(#GradientColorUnweighted);
+}
+
+.weightedWheel {
+  stroke: url(#GradientColorWeighted);
+}
+
+:root {
+  --stroke-dashoffset-weight: 106.8;
+}
+
+.circle-animation.unweightedWheel {
+    animation: animate-wheel-unweight 8s linear forwards;
+}
+
+.circle-animation.weightedWheel {
+  animation: animate-wheel-weight 8s linear forwards;
+}
+
+@keyframes animate-wheel-unweight {
+    to {
+    stroke-dashoffset: var(--stroke-dashoffset-unweight);
+    }
+}
+
+@keyframes animate-wheel-weight {
+  to {
+  stroke-dashoffset: var(--stroke-dashoffset-weight);
+  }
+}
+
+svg {
+  margin-top:-250px;
+}
