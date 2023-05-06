@@ -71,21 +71,18 @@ function calcGpa(gradeInput) {
   totalWeightGpa = (totalWeightGpa/weightGpaArr.length).toFixed(2);
 
   document.getElementById("unweightedGrade").innerHTML = totalUnweightGpa;
-  // document.getElementById("weightedGrade").innerHTML = totalWeightGpa;
+  document.getElementById("weightedGrade").innerHTML = totalWeightGpa;
 
   document.getElementById("classCount").innerHTML = " " + weightArr.length; // counted number of weight/unweight for # of classes inputted
 
-  animate(totalUnweightGpa, totalWeightGpa); // calls animate function
-  
+  animate(totalUnweightGpa, totalWeightGpa);
 }
 
 function animate(totalUnweightGpa, totalWeightGpa) {
-  console.log(totalUnweightGpa, totalWeightGpa);
-  
   let circleVariable = document.querySelectorAll(".circle-animation");
   circleVariable.forEach(pro => {
-    let unweightGpaWheel = 534-(534 * (totalUnweightGpa/4));
-    let weightGpaWheel = 534-(534 * (totalWeightGpa/5));
+    let unweightGpaWheel = 534(534*(totalUnweightGpa/4));
+    let weightGpaWheel = 534(534*(totalWeightGpa/4));
 
     pro.style.setProperty("--stroke-dashoffset-unweight", unweightGpaWheel);
     pro.style.setProperty("--stroke-dashoffset-weight", weightGpaWheel);
@@ -95,8 +92,6 @@ function animate(totalUnweightGpa, totalWeightGpa) {
 }
 
 function reset() {
-  pastUnweightGpa = totalUnweightGpa; // pastUnweightGpa is set to totalUnweightGpa so to compare if users unweighted gpa changed
-
   // totalGpas are reset to 0 so to calculate again when new class added and not have repeats of summing the array
   totalUnweightGpa = 0;
   totalWeightGpa = 0;

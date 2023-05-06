@@ -98,6 +98,7 @@ main {
 
 .container {
   flex-basis: 50%;
+  
 }
 
 h3 {
@@ -113,6 +114,147 @@ h3 {
   gap: 2rem;
 }
 
+#calculate_list {
+  background-image: url('https://images.unsplash.com/photo-1563293756-857fc846d0d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1185&q=80');
+  background-size: cover;
+  
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+
+  height: 100vh;
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: -100px 0px;
+  }
+}
+
+#cover {
+  /* background: rgba(248, 168, 209, 0.3); */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Left side of webpage styling */
+
+.classList {
+  padding: 10px;
+  width: 30vw;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 20px 5px 20px 5px;
+  overflow: hidden;
+}
+
+.calculator {
+  width: 30vw;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: rgba(255, 228, 225, 0.9);
+}
+
+.toggle, .toggle:before, .slot__label, .curtain {
+	transition-property: background-color, transform, visibility;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in, cubic-bezier(0.6,0.2,0.4,1.5), linear;
+}
+.toggle:before, .slot, .slot__label {
+	display: block;
+}
+.toggle:before, .curtain {
+	position: absolute;
+}
+.toggle:checked, .curtain {
+	background-color: #2b7f3a;
+}
+.toggle:focus {
+	outline: transparent;
+}
+.toggle {
+	border-radius: 0.75em;
+	box-shadow: 0 0 0 0.1em inset;
+	cursor: pointer;
+	position: relative;
+	margin-right: 0.25em;
+	width: 3em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.toggle:before {
+	background: currentColor;
+	border-radius: 50%;
+	content: "";
+	top: 0.2em;
+	left: 0.2em;
+	width: 1.1em;
+	height: 1.1em;
+}
+.toggle:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle:checked ~ .slot .slot__label, .slot__label:nth-child(2) {
+	transform: translateY(-50%) scaleY(0);
+}
+.toggle:checked ~ .slot .slot__label:nth-child(2) {
+	transform: translateY(-100%) scaleY(1);
+}
+.toggle:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.slot {
+	color: transparent;
+	font-size: 1.5em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	line-height: 1;
+	overflow: hidden;
+	height: 1em;
+	text-indent: -0.9em;
+	-webkit-text-stroke: 0.05em #fff;
+}
+.slot__label {
+	transform-origin: 50% 0;
+}
+.slot__label:nth-child(2) {
+	transform-origin: 50% 100%;
+}
+.curtain {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+	z-index: -1;
+}
+
+@supports (-webkit-backdrop-filter:none) or (backdrop-filter: none) {
+  .classList {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Progress Wheel */
 .wheel {
   display: flex;
   align-items: center;
@@ -164,10 +306,8 @@ h3 {
   align-items: center;
 }
 
-/* :root {
-  --my-stroke--dashoffset: 600;
-} */
 
+/* Gpa Wheels */
 circle {
   fill: none;
   stroke-width: 30px;
@@ -178,7 +318,6 @@ circle {
 .unweightedWheel {
   stroke: url(#GradientColorUnweighted);
 }
-
 .weightedWheel {
   stroke: url(#GradientColorWeighted);
 }
@@ -188,7 +327,7 @@ circle {
 }
 
 .circle-animation.unweightedWheel {
-    animation: animate-wheel-unweight 8s linear forwards;
+  animation: animate-wheel-unweight 8s linear forwards;
 }
 
 .circle-animation.weightedWheel {
@@ -196,17 +335,17 @@ circle {
 }
 
 @keyframes animate-wheel-unweight {
-    to {
-    stroke-dashoffset: var(--stroke-dashoffset-unweight);
-    }
+  to{stroke-dashoffset: var(--stroke-dashoffset-unweight);}
 }
 
 @keyframes animate-wheel-weight {
-  to {
-  stroke-dashoffset: var(--stroke-dashoffset-weight);
-  }
+  to{stroke-dashoffset: var(--stroke-dashoffset-weight);}
 }
 
 svg {
   margin-top:-250px;
 }
+
+
+
+
